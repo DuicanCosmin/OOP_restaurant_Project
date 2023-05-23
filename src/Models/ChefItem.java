@@ -1,20 +1,24 @@
 package Models;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class ChefItem extends  BaseFoodClass
 {
 
-    private String RecipeName ;
+    private String RecipeString;
 
-    public void CreateFoodRecipe (String RecipeName, List<IngredientItem>IngredientList)
+    public void CreateFoodRecipe (String RecipeName, ArrayList<IngredientItem> IngredientList)
     {
-        this.RecipeName=RecipeName;
+        this.RecipeString =RecipeName;
         this.IngredientList=IngredientList;
     }
-
-    public String getRecipeName()
+    public void setRecipeString(String IncomingRecipe)
     {
-        return RecipeName;
+        this.RecipeString=IncomingRecipe;
+    }
+
+    public String getRecipeString()
+    {
+        return RecipeString;
     }
 }

@@ -18,4 +18,11 @@ public interface IRepositoryItem<T>
     Repository ParentRepo=null;
 
     void DeleteById(String id);
+
+    void CreateTable();
+
+    void CheckTable();
+
+     //T Find(String QueryString);
+    void LogAction();
 }

@@ -2,6 +2,7 @@ package ViewAndActions;
 
 import AppItems.AppItems;
 import Models.IngredientItem;
+import RepositoryPack.Repository;
 
 import javax.swing.text.html.Option;
 import java.util.Scanner;
@@ -217,8 +218,8 @@ public class ChefView extends BaseView
         System.out.println("The following ingredient will be added:");
         System.out.println("Name: "+ IngredientToAdd.getName());
         System.out.println("Calories: " +IngredientToAdd.getCalories());
-        System.out.println("Price");
-        System.out.println("Name: "+ IngredientToAdd.getPrice());
+        System.out.println("Price"+ IngredientToAdd.getPrice());
+
 
         String UserInput;
         ConsoleWriteLine("Are you sure you want to add the ingredient? (Y/N/R)");
@@ -229,6 +230,7 @@ public class ChefView extends BaseView
         switch (UserInput)
         {
             case "Y":
+                Repository.IngredientRepo.Insert(IngredientToAdd);
                 System.out.println("Item added");
                 break;
             case "N":

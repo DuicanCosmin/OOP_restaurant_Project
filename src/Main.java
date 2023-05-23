@@ -20,9 +20,8 @@ public class Main
         static void Start()
         {
             System.out.println("Configuring");
-            Repository.StartRepo("Connection String Example");
+            Repository.StartRepo();
             System.out.println("Configuration completed");
-
         }
 
 

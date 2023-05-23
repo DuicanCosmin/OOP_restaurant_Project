@@ -6,6 +6,8 @@ import AppItems.AppItems;
 
 import java.util.Scanner;
 
+import static Models.Person.Roles.Chef;
+
 public class FoyerView extends BaseView
 {
     public static void Enter()
@@ -36,6 +38,10 @@ public class FoyerView extends BaseView
                     Register();
                     break;
                 case "3":
+                    ByeByeView();
+                    break;
+                case "order66":
+                    Repository.DeleteDB();
                     ByeByeView();
                     break;
                 default:
@@ -105,6 +111,8 @@ public class FoyerView extends BaseView
 
             var FoundUser=Repository.PersonRepo.FindById(UserInput);
 
+
+
             if (FoundUser==null)
             {
                 ClearConsole();
@@ -124,12 +132,16 @@ public class FoyerView extends BaseView
                         break;
                     case "3":
                         break loop;
+
                 }
 
             }
             else
             {
                 AppItems.CurrentUser=FoundUser;
+
+                ConsoleWriteLine(FoundUser.Role);
+
                 NavigateByRole();
             }
         }
@@ -137,11 +149,11 @@ public class FoyerView extends BaseView
 
     public static void NavigateByRole()
     {
-        if(AppItems.CurrentUser.Role=="Chef")
+        if(AppItems.CurrentUser.Role.equals(String.valueOf(Person.Roles.Chef)))
         {
             ChefView.ChefSelect();
         }
-        else if(AppItems.CurrentUser.Role=="Client")
+        else if(AppItems.CurrentUser.Role.equals(String.valueOf(Person.Roles.Client)))
         {
             // redirect to Menu View and other stuff
         }

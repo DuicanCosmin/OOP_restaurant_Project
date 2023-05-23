@@ -1,12 +1,12 @@
 package Models;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Order
 {
     private Long ID;
 
-    public List<MenuItem> OrderedItems;
+    public ArrayList<MenuItem> OrderedItems;
 
     public Long getID()
     {
@@ -22,19 +22,23 @@ public class Order
 
     private long OrderByID;
 
-    public String getOrderStatus() {
+    public String getOrderStatus()
+    {
         return OrderStatus;
     }
 
-    public void setOrderStatus(String orderStatus) {
+    public void setOrderStatus(String orderStatus)
+    {
         OrderStatus = orderStatus;
     }
 
-    public long getOrderByID() {
+    public long getOrderByID()
+    {
         return OrderByID;
     }
 
-    public void setOrderByID(long orderByID) {
+    public void setOrderByID(long orderByID)
+    {
         OrderByID = orderByID;
     }
 
@@ -49,4 +53,10 @@ public class Order
         return 0;
     }
 
+    public enum StatusList
+    {
+        Ordered,
+        Cooked,
+        Paid
+    }
 }
