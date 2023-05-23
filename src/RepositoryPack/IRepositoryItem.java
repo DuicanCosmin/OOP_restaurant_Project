@@ -24,5 +24,6 @@ public interface IRepositoryItem<T>
     void CheckTable();
 
      //T Find(String QueryString);
-    void LogAction();
+
+    void LogAction(String Action);
 }

@@ -146,7 +146,7 @@ public class PersonRepository implements IRepositoryItem<Person>
     }
 
     @Override
-    public void LogAction()
+    public void LogAction(String Action)
     {
 
     }

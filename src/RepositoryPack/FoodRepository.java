@@ -243,8 +243,10 @@ public class FoodRepository implements IRepositoryItem<ChefItem>
         }
     }
 
+
+
     @Override
-    public void LogAction()
+    public void LogAction(String Action)
     {
 
     }

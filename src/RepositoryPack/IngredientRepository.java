@@ -1,12 +1,9 @@
 package RepositoryPack;
 
 import Models.IngredientItem;
-import Models.Person;
-import jdk.jshell.spi.ExecutionControl;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class IngredientRepository implements IRepositoryItem<IngredientItem>
 {
@@ -43,6 +40,8 @@ public class IngredientRepository implements IRepositoryItem<IngredientItem>
 
             ps.close();
             conn.close();
+
+            LogAction("Added " +entity.getName() );
         }
         catch (SQLException e)
         {
@@ -198,6 +197,8 @@ public class IngredientRepository implements IRepositoryItem<IngredientItem>
 
             ps.close();
             conn.close();
+
+
         }
         catch (SQLException e)
         {
@@ -292,9 +293,12 @@ public class IngredientRepository implements IRepositoryItem<IngredientItem>
         }
     }
 
-    @Override
-    public void LogAction() {
 
+
+    @Override
+    public void LogAction(String Action)
+    {
+        Logger.WriteLog(Action);
     }
 
 

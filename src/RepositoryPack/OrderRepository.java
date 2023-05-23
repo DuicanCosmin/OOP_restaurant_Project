@@ -57,7 +57,7 @@ public class OrderRepository implements IRepositoryItem<Order>
     }
 
     @Override
-    public void LogAction()
+    public void LogAction(String Action)
     {
 
     }

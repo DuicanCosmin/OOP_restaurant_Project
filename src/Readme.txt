@@ -15,4 +15,5 @@ interfata. La pornirea aplicatiei este chemata o metoda de initializare care ver
 
 Pentru vizualizare am creat o clasa de baza, din care implementez alte clase pentru vizualizare cu metode individuale.
 
-
+Pentru partea de logare in aplicatia contul default este 'Master Chef'
+Momentat nu au fost implementate toate functiile de SQL dar se poate loga si adauga ingrediente.

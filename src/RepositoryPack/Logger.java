@@ -2,7 +2,9 @@ package RepositoryPack;
 
 import AppItems.AppItems;
 
+import java.io.Console;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Logger
@@ -27,6 +29,7 @@ public class Logger
                 file.createNewFile();
 
             }
+            LogPath=fileName;
         }
         catch (IOException e)
         {
@@ -36,9 +39,19 @@ public class Logger
 
         }
     }
-    public static void WriteLog()
+    public static void WriteLog(String LogAction)
     {
 
+
+        try (FileWriter writer = new FileWriter(LogPath))
+        {
+            writer.write(LogAction);
+
+        }
+        catch (IOException e)
+        {
+            System.out.println(e.toString());
+        }
     }
 
 }
